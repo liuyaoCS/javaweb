@@ -21,6 +21,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+   <a href="/JavawebTest/ResponseTest">look</a> <br>
+   <%
+   		String data=(String)request.getAttribute("data");
+   		out.write(data);
+    %>
+   <font color='red'>
+    <%
+    	//String data=(String)application.getAttribute("data");
+    	//out.write(data);
+     %>
+     </font> 
   </body>
 </html>

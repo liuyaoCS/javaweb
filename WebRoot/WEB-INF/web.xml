@@ -24,7 +24,6 @@
     <servlet-name>HelloWord</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>easyServlet</servlet-name>
     <servlet-class>cn.ly.servlet.easyServlet</servlet-class>
@@ -33,7 +32,38 @@
     <servlet-name>easyServlet</servlet-name>
     <url-pattern>/easyServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>ResponseTest</servlet-name>
+    <servlet-class>cn.ly.servlet.ResponseTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResponseTest</servlet-name>
+    <url-pattern>/ResponseTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RequestTest</servlet-name>
+    <servlet-class>cn.ly.servlet.RequestTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestTest</servlet-name>
+    <url-pattern>/RequestTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CookieTest</servlet-name>
+    <servlet-class>cn.ly.servlet.CookieTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieTest</servlet-name>
+    <url-pattern>/CookieTest</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>SessionTest</servlet-name>
+    <servlet-class>cn.ly.servlet.SessionTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTest</servlet-name>
+    <url-pattern>/SessionTest</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
