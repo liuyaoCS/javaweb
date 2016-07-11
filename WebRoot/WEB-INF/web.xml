@@ -24,6 +24,14 @@
     <servlet-name>HelloWord</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+ <servlet>
+    <servlet-name>hellojsonServlet</servlet-name>
+    <servlet-class>cn.ly.servlet.HelloJsonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hellojsonServlet</servlet-name>
+    <url-pattern>/hellojsonServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>easyServlet</servlet-name>
     <servlet-class>cn.ly.servlet.easyServlet</servlet-class>

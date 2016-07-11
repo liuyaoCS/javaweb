@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.junit.Test;
+
+import cn.ly.utils.JdbcUtil;
+
 import com.mysql.jdbc.Driver;
 
 
@@ -23,6 +27,7 @@ public class SqlTest {
 		//1 执行sql(dml->executeUpdate,dql->executeQuery,任意语句->execute) 
 		//2 批处理 addBatch executeBatch clearBatch
 		//PreparedStatement CallableStatement(可以获取存储过程)
+		//可获得滚动结果集 定位，向前遍历... connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		Statement st=connection.createStatement();
 		
 		//ResultSet最开始在第一行之前，通过next移动
@@ -45,4 +50,17 @@ public class SqlTest {
 		connection.close(); //很消耗资源，必须即是关闭，否则可能会卡死。最好写在finnally里
 		
 	}
+	@Test
+	public void test() throws SQLException{
+		Statement statement=JdbcUtil.getStateMent();
+		
+		if(statement!=null){
+			int ret=statement.executeUpdate("insert into dept values(null,'sale');");
+			System.out.println("ret->"+ret);
+		}
+		
+		
+		JdbcUtil.release();
+	}
+	
 }
