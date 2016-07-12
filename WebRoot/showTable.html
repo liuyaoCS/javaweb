@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var a=document.getElementById("t");
+            a.onclick=function () {
+             
+                var  xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function () {
+                    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                        //alert(xmlhttp.responseText);
+                        
+                        var json=eval(xmlhttp.responseText);
+                        
+                        var msg="<table border='1'><tr><td>id</td><td>name</td><td>price</td></tr>";
+                        for(var i=0;i<json.length;i++){
+                        	msg+="<tr><td>"+json[i].id+"</td><td>"+json[i].name+"</td><td>"+json[i].price+"</td></tr>";
+                        }
+                        
+                        msg+="</table>";
+                        var c=document.getElementById("content");
+                        c.innerHTML=msg;
+                        
+                    }
+                };
+                xmlhttp.open("GET","http://localhost:8080/JavawebTest/hello");
+                //xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                xmlhttp.send(null);
+            }
+        };
+
+    </script>
+</head>
+<body>
+<a href="javascript:void(0)" id="t">show table</a>
+<div id="content"></div>
+
+</body>
+</html>
