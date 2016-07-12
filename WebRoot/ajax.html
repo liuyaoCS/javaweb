@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //创建对象
+    var  xmlhttp=new XMLHttpRequest();
+    //设置回调函数
+    xmlhttp.onreadystatechange=function () {
+        //alert(xmlhttp.readyState);
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+            alert(xmlhttp.responseText);
+        }
+    };
+    //设置请求方式,url,同步异步
+    xmlhttp.open("GET","/JavawebTest/hello");
+    //设置请求参数并发送
+    xmlhttp.send(null);
+
+</script>
+</body>
+</html>

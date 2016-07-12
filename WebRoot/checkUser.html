@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var txt=document.getElementById("t");
+            txt.onblur=function () {
+                var value=txt.value;
+                var  xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function () {
+                    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                        alert(xmlhttp.responseText);
+                    }
+                };
+                xmlhttp.open("POST","http://localhost:8080/JavawebTest/hello");
+                xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                xmlhttp.send("username="+value);
+            }
+        };
+
+    </script>
+</head>
+<body>
+<input type="text" name="username" id="t">
+<input type="text"/>
+</body>
+</html>
