@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+  <head>
+    <title>ajax方法的调用</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		  $(function(){
+		  		$("#ajaxbutton").bind("click",function(){
+						
+						var options={
+							url:"/JavawebTest/hello",
+							type:"POST",
+							//data:"username=卢雨",//提交数据的第一个格式..  字符串
+							//请求数据的第二种格式... 一般我们使用第二种
+							data:{
+								username:"高亚"
+							},
+							success:function(data){
+								alert(data);
+								
+							},
+						//	dateType:"",//服务端预期的数据返回类型...
+							timeout:"3000",//请求超时的时间
+							error:function(){//请求失败时的一个回调函数..
+								//可以给用户号的提示...
+							}
+						}
+						$.ajax(options)
+					
+					
+				})
+			
+			
+		  })
+		
+		
+	</script>
+  </head>
+  
+  <body>
+    	<input type="button"  id="ajaxbutton"  value="ajax 方法的调用">
+  </body>
+</html>

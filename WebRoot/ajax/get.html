@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+  <head>
+    <title>get方法的调用</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		  jQuery(function(){
+		  		$("#getbutton").bind("click",function(){
+					$.get("/JavawebTest/hello",{},function(data){
+									
+						var obj=eval(data);
+						for(var i=0;i<obj.length;i++){
+							alert(obj[i].id+"-"+obj[i].name);
+						}
+					})
+				})
+			
+			
+		  })
+		
+		
+	</script>
+  </head>
+  
+  <body>
+  		<div>
+  			
+			
+  		</div>
+    	<input type="button"  id="getbutton"  value="get 方法的调用">
+  </body>
+</html>

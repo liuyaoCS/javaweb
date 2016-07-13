@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+  <head>
+    <title>post方法的调用</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		  $(function(){
+		  		$("#postbutton").bind("click",function(){
+					//一般如果我们有请求参数，就使用post 方法..
+						$.post("/JavawebTest/hello",{},function(data){
+							//alert(data);	
+							var json=eval(data);
+							alert(json[0].name);	
+						})
+					
+					
+				})
+			
+			
+		  })
+		
+		
+	</script>
+  </head>
+  
+  <body>
+    	<input type="button"  id="postbutton"  value="post 方法的调用">
+  </body>
+</html>

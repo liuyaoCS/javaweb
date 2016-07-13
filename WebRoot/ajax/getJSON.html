@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+  <head>
+    <title>getJSON 放问服务端，服务端返回的数据格式必须是json 的数据格式...</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			  $("#getJSON").click(function(){
+			  	
+					$.getJSON("data.json",function(data){
+					
+						//jQuery 在解析json 的时候要求key 上面需要有双引号...
+						var obj=eval(data);
+						for(var i=0;i<obj.length;i++){
+							alert(obj[i].name+"-"+obj[i].desc);
+						}
+							
+					});
+				
+			  })
+			
+		})
+		
+		
+	</script>
+  </head>
+  
+  <body>
+    <input type="button"  id="getJSON"  value="getJSON 方法的调用">
+  </body>
+</html>
